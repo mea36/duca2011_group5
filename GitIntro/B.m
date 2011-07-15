@@ -6,11 +6,36 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#import "A.h"
 #import "B.h"
-
+#import "C.h"
+#import "D.h"
 
 @implementation B
 
+-(IBAction) gotoA{
+	A *aView = [[A alloc]
+				initWithNibName:@"A" bundle:nil];
+	[self.navigationController
+	 pushViewController:aView animated:YES];
+	[aView release];
+}
+
+-(IBAction) gotoC{
+	C *cView = [[C alloc]
+				initWithNibName:@"C" bundle:nil];
+	[self.navigationController
+	 pushViewController:cView animated:YES];
+	[cView release];
+}
+
+-(IBAction) gotoD{
+	D *dView = [[D alloc]
+				initWithNibName:@"D" bundle:nil];
+	[self.navigationController
+	 pushViewController:dView animated:YES];
+	[dView release];
+}
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
