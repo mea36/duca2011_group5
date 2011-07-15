@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 
 
-@interface A : UIViewController {
+@interface A : UIViewController 
+{
+	
 
 }
+
+-(IBAction) gotoB;
+-(IBAction) gotoC;
+-(IBAction) gotoD;
 
 @end
