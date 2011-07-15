@@ -93,7 +93,7 @@
 					<object class="IBUIButton" id="298089561">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 403}, {72, 37}}</string>
+						<string key="NSFrame">{{50, 364}, {72, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -173,9 +173,9 @@
 						<reference key="object" ref="191373211"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="298089561"/>
 							<reference ref="458141410"/>
 							<reference ref="188254867"/>
+							<reference ref="298089561"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -238,7 +238,7 @@
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABCFAAAw60AAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABCDAAAw9EAAA</bytes>
 					</object>
 				</object>
 			</object>
