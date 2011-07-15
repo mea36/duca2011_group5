@@ -7,7 +7,9 @@
 //
 
 #import "A.h"
-
+#import "B.h"
+#import "C.h"
+#import "D.h"
 
 @implementation A
 
@@ -53,6 +55,25 @@
 
 - (void)dealloc {
     [super dealloc];
+}
+
+-(IBAction) gotoB{
+	B *bView = [[B alloc] initWithNibName:@"B" bundle:nil];
+	[self.navigationController pushViewController:bView animated:YES];
+	[bView release];
+	
+}
+-(IBAction) gotoC{
+	C *cView = [[C alloc] initWithNibName:@"C" bundle:nil];
+	[self.navigationController pushViewController:cView animated:YES];
+	[cView release];
+	
+}
+-(IBAction) gotoD{
+	D *dView = [[D alloc] initWithNibName:@"D" bundle:nil];
+	[self.navigationController pushViewController:dView animated:YES];
+	[dView release];
+	
 }
 
 
