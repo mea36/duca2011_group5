@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'ClassMate' target in the 'ClassMate' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
