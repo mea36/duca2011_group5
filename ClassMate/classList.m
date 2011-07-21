@@ -20,20 +20,20 @@
 	self.title = @"Classes";
 	[super viewDidLoad];
 	
-	classView *viewController = [[classView alloc] initWithNibName:@"classView" bundle:[NSBundle mainBundle]];
+	//classView *viewController = [[classView alloc] initWithNibName:@"classList" bundle:[NSBundle mainBundle]];
 	
-	if(self.classViewController == nil)
+	/*if(self.classViewController == nil)
 	{
-		classView *viewController = [[classView alloc] initWithNibName:@"classView" bundle:[NSBundle mainBundle]];
+		classView *viewController = [[classView alloc] initWithNibName:@"classList" bundle:[NSBundle mainBundle]];
 		self.classViewController = viewController;
 		[viewController release];
 	}
-    	NSLog(@"i got here");
 	
 	[viewController release];
-	[self.navigationController pushViewController:self.classViewController animated:YES];
+	[self.navigationController pushViewController:self.classViewController animated:YES];*/
+	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
 }
 
@@ -92,6 +92,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 	[cell setText:@"English"];
+	
     
     // Configure the cell...
     
@@ -144,12 +145,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-	if (self.classViewController) {
-		classView *view2 = [[classView alloc] initWithNibName:@"classView" bundle:[NSBundle mainBundle]];
-		self.classViewController = view2;
-		[view2 release];
+	
+	
+	
+	classView *viewController = [[classView alloc] initWithNibName:@"classList" bundle:[NSBundle mainBundle]];
+	if(self.classViewController == nil)
+	{
+		classView *viewController = [[classView alloc] initWithNibName:@"classList" bundle:[NSBundle mainBundle]];
+		self.classViewController = viewController;
+		[viewController release];
 	}
+	
+	[viewController release];
 	[self.navigationController pushViewController:self.classViewController animated:YES];
+	
+	
 	return;
 }
 
