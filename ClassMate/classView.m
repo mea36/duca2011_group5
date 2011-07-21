@@ -1,42 +1,30 @@
 //
-//  classList.m
+//  classView.m
 //  ClassMate
 //
 //  Created by CS Admin on 7/19/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "classList.h"
+#import "classView.h"
 
 
-@implementation classList
-@synthesize classViewController;
+@implementation classView
+
 
 #pragma mark -
 #pragma mark View lifecycle
 
-
+/*
 - (void)viewDidLoad {
-	self.title = @"Classes";
-	[super viewDidLoad];
-	
-	classView *viewController = [[classView alloc] initWithNibName:@"classView" bundle:[NSBundle mainBundle]];
-	
-	if(self.classViewController == nil)
-	{
-		classView *viewController = [[classView alloc] initWithNibName:@"classView" bundle:[NSBundle mainBundle]];
-		self.classViewController = viewController;
-		[viewController release];
-	}
-    	NSLog(@"i got here");
-	
-	[viewController release];
-	[self.navigationController pushViewController:self.classViewController animated:YES];
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
-	
-}
+    [super viewDidLoad];
+ 
+	//HARD CODE ARRAY OF STUFF
 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+*/
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -72,13 +60,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    return 3;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;
+    return 4;
 }
 
 
@@ -91,7 +79,6 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-	[cell setText:@"English"];
     
     // Configure the cell...
     
@@ -108,7 +95,7 @@
 */
 
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -120,7 +107,7 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }   
 }
-*/
+
 
 
 /*
@@ -144,13 +131,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-	if (self.classViewController) {
-		classView *view2 = [[classView alloc] initWithNibName:@"classView" bundle:[NSBundle mainBundle]];
-		self.classViewController = view2;
-		[view2 release];
-	}
-	[self.navigationController pushViewController:self.classViewController animated:YES];
-	return;
+    /*
+    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+    // ...
+    // Pass the selected object to the new view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
+    */
 }
 
 

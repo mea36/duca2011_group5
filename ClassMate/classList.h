@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "classView.h"
 
 @interface classList : UITableViewController {
-
+	classView *classViewController;
+	
 }
+@property(nonatomic, retain) classView *classViewController;
+
 
 @end
