@@ -16,8 +16,6 @@
 		2840D7CE1179279E00D7F93C /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2840D7CD1179279E00D7F93C /* FirstView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
-		528C9B8B13D60E960052C02F /* classList.m in Sources */ = {isa = PBXBuildFile; fileRef = 528C9B8913D60E960052C02F /* classList.m */; };
-		528C9B8C13D60E960052C02F /* classList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528C9B8A13D60E960052C02F /* classList.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +32,6 @@
 		28A0AB4B0D9B1048005BE974 /* ClassMate_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassMate_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		528C9B8813D60E960052C02F /* classList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = classList.h; sourceTree = "<group>"; };
-		528C9B8913D60E960052C02F /* classList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = classList.m; sourceTree = "<group>"; };
-		528C9B8A13D60E960052C02F /* classList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = classList.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ClassMate-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ClassMate-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,9 +71,6 @@
 		29B97314FDCFA39411CA2CEA /* ClassMate */ = {
 			isa = PBXGroup;
 			children = (
-				528C9B8813D60E960052C02F /* classList.h */,
-				528C9B8913D60E960052C02F /* classList.m */,
-				528C9B8A13D60E960052C02F /* classList.xib */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -170,7 +162,6 @@
 				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
 				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
 				2840D7CE1179279E00D7F93C /* FirstView.xib in Resources */,
-				528C9B8C13D60E960052C02F /* classList.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +175,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* ClassMateAppDelegate.m in Sources */,
 				28216C970DB411BC00E5133A /* FirstViewController.m in Sources */,
-				528C9B8B13D60E960052C02F /* classList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
