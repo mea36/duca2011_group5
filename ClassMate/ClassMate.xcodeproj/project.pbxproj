@@ -23,6 +23,13 @@
 		525D593313D613B200B66334 /* classView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525D593113D613B200B66334 /* classView.xib */; };
 		528C9B8B13D60E960052C02F /* classList.m in Sources */ = {isa = PBXBuildFile; fileRef = 528C9B8913D60E960052C02F /* classList.m */; };
 		528C9B8C13D60E960052C02F /* classList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528C9B8A13D60E960052C02F /* classList.xib */; };
+		52C98C0213D9F93C00B021FD /* EGODatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C98BF913D9F93C00B021FD /* EGODatabase.m */; };
+		52C98C0313D9F93C00B021FD /* EGODatabaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C98BFB13D9F93C00B021FD /* EGODatabaseRequest.m */; };
+		52C98C0413D9F93C00B021FD /* EGODatabaseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C98BFD13D9F93C00B021FD /* EGODatabaseResult.m */; };
+		52C98C0513D9F93C00B021FD /* EGODatabaseRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C98BFF13D9F93C00B021FD /* EGODatabaseRow.m */; };
+		52C98C0613D9F93C00B021FD /* EgoDb.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C98C0113D9F93C00B021FD /* EgoDb.m */; };
+		52C98C0913D9F94A00B021FD /* ClassObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C98C0813D9F94A00B021FD /* ClassObj.m */; };
+		52C98C0B13D9F95700B021FD /* ClassMate2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 52C98C0A13D9F95700B021FD /* ClassMate2.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +56,19 @@
 		528C9B8813D60E960052C02F /* classList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = classList.h; path = ../classList.h; sourceTree = "<group>"; };
 		528C9B8913D60E960052C02F /* classList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = classList.m; path = ../classList.m; sourceTree = "<group>"; };
 		528C9B8A13D60E960052C02F /* classList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = classList.xib; path = ../classList.xib; sourceTree = "<group>"; };
+		52C98BF813D9F93C00B021FD /* EGODatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabase.h; sourceTree = "<group>"; };
+		52C98BF913D9F93C00B021FD /* EGODatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabase.m; sourceTree = "<group>"; };
+		52C98BFA13D9F93C00B021FD /* EGODatabaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabaseRequest.h; sourceTree = "<group>"; };
+		52C98BFB13D9F93C00B021FD /* EGODatabaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabaseRequest.m; sourceTree = "<group>"; };
+		52C98BFC13D9F93C00B021FD /* EGODatabaseResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabaseResult.h; sourceTree = "<group>"; };
+		52C98BFD13D9F93C00B021FD /* EGODatabaseResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabaseResult.m; sourceTree = "<group>"; };
+		52C98BFE13D9F93C00B021FD /* EGODatabaseRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabaseRow.h; sourceTree = "<group>"; };
+		52C98BFF13D9F93C00B021FD /* EGODatabaseRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabaseRow.m; sourceTree = "<group>"; };
+		52C98C0013D9F93C00B021FD /* EgoDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EgoDb.h; sourceTree = "<group>"; };
+		52C98C0113D9F93C00B021FD /* EgoDb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EgoDb.m; sourceTree = "<group>"; };
+		52C98C0713D9F94A00B021FD /* ClassObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassObj.h; sourceTree = "<group>"; };
+		52C98C0813D9F94A00B021FD /* ClassObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassObj.m; sourceTree = "<group>"; };
+		52C98C0A13D9F95700B021FD /* ClassMate2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ClassMate2.sqlite; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ClassMate-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ClassMate-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +90,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				52C98C0713D9F94A00B021FD /* ClassObj.h */,
+				52C98C0813D9F94A00B021FD /* ClassObj.m */,
 				528C9B8813D60E960052C02F /* classList.h */,
 				528C9B8913D60E960052C02F /* classList.m */,
 				528C9B8A13D60E960052C02F /* classList.xib */,
@@ -98,6 +120,7 @@
 		29B97314FDCFA39411CA2CEA /* ClassMate */ = {
 			isa = PBXGroup;
 			children = (
+				52C98BF713D9F91C00B021FD /* Database */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -119,6 +142,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				52C98C0A13D9F95700B021FD /* ClassMate2.sqlite */,
 				2840D7CD1179279E00D7F93C /* FirstView.xib */,
 				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
@@ -136,6 +160,23 @@
 				52390B3613D9F31F00C3344C /* libsqlite3.0.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52C98BF713D9F91C00B021FD /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				52C98BF813D9F93C00B021FD /* EGODatabase.h */,
+				52C98BF913D9F93C00B021FD /* EGODatabase.m */,
+				52C98BFA13D9F93C00B021FD /* EGODatabaseRequest.h */,
+				52C98BFB13D9F93C00B021FD /* EGODatabaseRequest.m */,
+				52C98BFC13D9F93C00B021FD /* EGODatabaseResult.h */,
+				52C98BFD13D9F93C00B021FD /* EGODatabaseResult.m */,
+				52C98BFE13D9F93C00B021FD /* EGODatabaseRow.h */,
+				52C98BFF13D9F93C00B021FD /* EGODatabaseRow.m */,
+				52C98C0013D9F93C00B021FD /* EgoDb.h */,
+				52C98C0113D9F93C00B021FD /* EgoDb.m */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +234,7 @@
 				528C9B8C13D60E960052C02F /* classList.xib in Resources */,
 				525D593313D613B200B66334 /* classView.xib in Resources */,
 				52390B0313D9F07600C3344C /* DescriptionView.xib in Resources */,
+				52C98C0B13D9F95700B021FD /* ClassMate2.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +251,12 @@
 				528C9B8B13D60E960052C02F /* classList.m in Sources */,
 				525D593213D613B200B66334 /* classView.m in Sources */,
 				52390B0213D9F07600C3344C /* DescriptionView.m in Sources */,
+				52C98C0213D9F93C00B021FD /* EGODatabase.m in Sources */,
+				52C98C0313D9F93C00B021FD /* EGODatabaseRequest.m in Sources */,
+				52C98C0413D9F93C00B021FD /* EGODatabaseResult.m in Sources */,
+				52C98C0513D9F93C00B021FD /* EGODatabaseRow.m in Sources */,
+				52C98C0613D9F93C00B021FD /* EgoDb.m in Sources */,
+				52C98C0913D9F94A00B021FD /* ClassObj.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
