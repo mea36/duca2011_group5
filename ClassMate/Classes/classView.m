@@ -8,20 +8,32 @@
 
 #import "classView.h"
 
+#define HOMEWORKS 0
+#define PROJECTS 1
+#define TEST_SECTION 2
 
 @implementation classView
+
+@synthesize homework, tests, projects;
 
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
+	
+
+	
+	//this is hard coding homework tests and quizzes
+	self.homework = [NSArray arrayWithObjects:@"Homework 1", @"Homework 2", @"Homework3", nil];
+	self.tests = [NSArray arrayWithObjects:@"Test 1",@"Test 2",@"Test 3",nil];
+	self.projects = [NSArray arrayWithObjects:@"Project 1",@"Project 2",@"Project 3", nil];
+
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-*/
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -57,26 +69,46 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    return 3;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	
     // Return the number of rows in the section.
-    return 1;
+    if (section == HOMEWORKS) {
+		return [self.homework count];
+	}else if (section == PROJECTS) {
+		return [self.projects count];
+	}else if (section == TEST_SECTION){
+		return [self.tests count]; 
+	}
+	return 0;
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    [cell setText:@"Homework"];
+	
+	//HAVE AN IF STATEMENT CHECKING THE SECTION AND FILLING IN WITH THE CORRECT ARRAY ACCORDINGLY
+    //[cell setText:@"stuff"];
+	
+	if (indexPath.section == HOMEWORKS) {
+		[cell setText:[homework objectAtIndex:indexPath.row]];
+	}
+	else if (indexPath.section == TEST_SECTION){
+		[cell setText:[tests objectAtIndex:indexPath.row]];
+	}
+	else {
+		[cell setText:[projects objectAtIndex:indexPath.row]];
+	}
+
     // Configure the cell...
     
     return cell;
@@ -156,9 +188,36 @@
 
 
 - (void)dealloc {
+	[tests release];
+	[projects release];
+	[homework release];
     [super dealloc];
 }
 
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section 
+{
+	
+	//check for the section number and then do one thing or another depending on the result
+	UIView *view = [[[UIView alloc] initWithFrame:CGRectMake(10, 10, 100, 30)] autorelease];
+	UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 100, 200, 100)];
+	view.backgroundColor = [UIColor lightGrayColor];
+	
+	//if section equals HOMEWORK
+	
+	
+	return view;
+	
+	
+
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	
+	
+		return tableView.tableHeaderView.frame.size.height;
+}
 
 @end
 

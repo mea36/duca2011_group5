@@ -10,9 +10,13 @@
 
 
 @interface classView : UITableViewController {
-	
+	NSArray *homework;
+	NSArray *tests;
+	NSArray *projects;
 
 }
-
+@property (nonatomic, retain) NSArray *homework;
+@property (nonatomic, retain) NSArray *tests;
+@property (nonatomic, retain) NSArray *projects;
 
 @end
