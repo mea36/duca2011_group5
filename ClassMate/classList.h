@@ -6,11 +6,15 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "classView.h"
 
 
-@interface classList : NSObject {
-
+@interface classList : UIViewController {
+	classView *classViewController;
+	NSArray *classes;
+	
 }
-
+@property(nonatomic, retain) classView *classViewController;
+@property(nonatomic, retain) NSArray *classes;
 @end
