@@ -15,6 +15,7 @@
 @implementation classView
 
 @synthesize homework, tests, projects;
+@synthesize descriptionViewController;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -22,6 +23,12 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	self.title = @"Events";
+	
+	UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Add"
+												style:UIBarButtonSystemItemDone target:nil action:nil];
+	self.navigationItem.rightBarButtonItem = rightButton;
+	[rightButton release];
 	
 
 	
@@ -167,6 +174,12 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     */
+	if (self.descriptionViewController == nil) {
+		DescriptionView *view2 = [[DescriptionView alloc] initWithNibName:@"DescriptionView" bundle:[NSBundle mainBundle]];
+		self.descriptionViewController = view2;
+		[view2 release];
+	}
+	[self.navigationController pushViewController:self.descriptionViewController animated:YES];
 	
 }
 
