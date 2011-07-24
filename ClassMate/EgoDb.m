@@ -8,6 +8,7 @@
 
 #import "EgoDb.h"
 #import "ClassObj.h"
+#import "EventObj.h"
 
 @implementation EgoDb
 
@@ -56,6 +57,81 @@ static EgoDb *db;
 	}
     
     return retval; 
+}
+
+- (NSArray *)getHomeworkForClass:(int)classID
+{
+    NSMutableArray *retval = [[[NSMutableArray alloc] init] autorelease];
+    
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM events WHERE type = 'homework' AND associated_class = %d", classID];
+    EGODatabaseResult *rows = [db executeQuery:query];
+        
+    for(EGODatabaseRow* row in rows) {
+        //goes through each row
+        EventObj* event = [[EventObj alloc] init];
+        [event setEvent_id:[row intForColumn:@"event_id"]];
+        [event setEvent_type:[row stringForColumn:@"type"]]; 
+        [event setEvent_title:[row stringForColumn:@"title"]];
+        [event setEvent_description:[row stringForColumn:@"description"]];
+        
+        NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
+        [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [event setEvent_due_date:[df dateFromString:[row stringForColumn:@"due_date"]]];
+        [retval addObject:event];
+        [event release];
+	}
+
+    return retval;
+}
+
+- (NSArray *)getProjectsForClass:(int)classID
+{
+    NSMutableArray *retval = [[[NSMutableArray alloc] init] autorelease];
+    
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM events WHERE type = 'project' AND associated_class = %d", classID];
+    EGODatabaseResult *rows = [db executeQuery:query];
+    
+    for(EGODatabaseRow* row in rows) {
+        //goes through each row
+        EventObj* event = [[EventObj alloc] init];
+        [event setEvent_id:[row intForColumn:@"event_id"]];
+        [event setEvent_type:[row stringForColumn:@"type"]]; 
+        [event setEvent_title:[row stringForColumn:@"title"]];
+        [event setEvent_description:[row stringForColumn:@"description"]];
+        
+        NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
+        [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [event setEvent_due_date:[df dateFromString:[row stringForColumn:@"due_date"]]];
+        [retval addObject:event];
+        [event release];
+	}
+    
+    return retval;
+}
+
+- (NSArray *)getTestsForClass:(int)classID
+{
+    NSMutableArray *retval = [[[NSMutableArray alloc] init] autorelease];
+    
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM events WHERE type = 'test' AND associated_class = %d", classID];
+    EGODatabaseResult *rows = [db executeQuery:query];
+    
+    for(EGODatabaseRow* row in rows) {
+        //goes through each row
+        EventObj* event = [[EventObj alloc] init];
+        [event setEvent_id:[row intForColumn:@"event_id"]];
+        [event setEvent_type:[row stringForColumn:@"type"]]; 
+        [event setEvent_title:[row stringForColumn:@"title"]];
+        [event setEvent_description:[row stringForColumn:@"description"]];
+        
+        NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
+        [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [event setEvent_due_date:[df dateFromString:[row stringForColumn:@"due_date"]]];
+        [retval addObject:event];
+        [event release];
+	}
+    
+    return retval;
 }
 
 - (void)dealloc {

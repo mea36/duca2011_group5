@@ -16,7 +16,9 @@
 - (id)init;
 - (void)createEditableCopyOfDatabaseIfNeeded;
 - (NSArray*)getListOfClasses; 
-
+- (NSArray*)getHomeworkForClass:(int)classID;
+- (NSArray*)getTestsForClass:(int)classID;
+- (NSArray*)getProjectsForClass:(int)classID;
 
 //other methods for the db will go here
 @end
