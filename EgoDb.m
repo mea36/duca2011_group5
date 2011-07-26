@@ -180,8 +180,14 @@ static EgoDb *db;
 {
     NSString *query = [NSString stringWithFormat:@"DELETE FROM events WHERE event_id = %d", eventID];
     
-    BOOL retval = [db executeUpdate:query]; 
-	NSLog(@"retval = %d", retval);
+    [db executeUpdate:query]; 
+}
+
+- (void)deleteClassFromList:(int)classID
+{
+    NSString *query = [NSString stringWithFormat:@"DELETE FROM events WHERE event_id = %d", classID];
+    
+    [db executeUpdate:query]; 
 }
 
 

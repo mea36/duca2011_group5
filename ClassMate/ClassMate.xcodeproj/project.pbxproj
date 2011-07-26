@@ -16,6 +16,8 @@
 		2840D7CE1179279E00D7F93C /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2840D7CD1179279E00D7F93C /* FirstView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		3F571FB513DF535600C93301 /* aboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F571FB313DF535600C93301 /* aboutView.m */; };
+		3F571FB613DF535600C93301 /* aboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F571FB413DF535600C93301 /* aboutView.xib */; };
 		52390B0213D9F07600C3344C /* DescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52390B0013D9F07600C3344C /* DescriptionView.m */; };
 		52390B0313D9F07600C3344C /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52390B0113D9F07600C3344C /* DescriptionView.xib */; };
 		52390B3713D9F31F00C3344C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 52390B3613D9F31F00C3344C /* libsqlite3.0.dylib */; };
@@ -47,6 +49,9 @@
 		28A0AB4B0D9B1048005BE974 /* ClassMate_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassMate_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3F571FB213DF535600C93301 /* aboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aboutView.h; path = ../aboutView.h; sourceTree = "<group>"; };
+		3F571FB313DF535600C93301 /* aboutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = aboutView.m; path = ../aboutView.m; sourceTree = "<group>"; };
+		3F571FB413DF535600C93301 /* aboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = aboutView.xib; path = ../aboutView.xib; sourceTree = "<group>"; };
 		52390AFF13D9F07600C3344C /* DescriptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionView.h; sourceTree = "<group>"; };
 		52390B0013D9F07600C3344C /* DescriptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionView.m; sourceTree = "<group>"; };
 		52390B0113D9F07600C3344C /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
@@ -56,8 +61,8 @@
 		525D593113D613B200B66334 /* classView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = classView.xib; sourceTree = "<group>"; };
 		52A5AA3013DE521F009E06A9 /* EgoDb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EgoDb.m; path = ../EgoDb.m; sourceTree = SOURCE_ROOT; };
 		52B21A0A13DE511C00C984A5 /* EgoDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EgoDb.h; sourceTree = "<group>"; };
-		52B21A5313DE513300C984A5 /* EventObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventObj.h; sourceTree = "<group>"; };
-		52B21A5413DE513300C984A5 /* EventObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventObj.m; sourceTree = "<group>"; };
+		52B21A5313DE513300C984A5 /* EventObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventObj.h; path = ../EventObj.h; sourceTree = "<group>"; };
+		52B21A5413DE513300C984A5 /* EventObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObj.m; path = ../EventObj.m; sourceTree = "<group>"; };
 		52C98BF813D9F93C00B021FD /* EGODatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabase.h; sourceTree = "<group>"; };
 		52C98BF913D9F93C00B021FD /* EGODatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabase.m; sourceTree = "<group>"; };
 		52C98BFA13D9F93C00B021FD /* EGODatabaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabaseRequest.h; sourceTree = "<group>"; };
@@ -93,6 +98,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				52B21A5313DE513300C984A5 /* EventObj.h */,
+				52B21A5413DE513300C984A5 /* EventObj.m */,
+				3F571FB213DF535600C93301 /* aboutView.h */,
+				3F571FB313DF535600C93301 /* aboutView.m */,
+				3F571FB413DF535600C93301 /* aboutView.xib */,
 				52FA5E4413DF49DE00CEEBD7 /* classList.h */,
 				52FA5E4513DF49DE00CEEBD7 /* classList.m */,
 				52FA5E4613DF49DE00CEEBD7 /* classList.xib */,
@@ -168,8 +178,6 @@
 		52C98BF713D9F91C00B021FD /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				52B21A5313DE513300C984A5 /* EventObj.h */,
-				52B21A5413DE513300C984A5 /* EventObj.m */,
 				52A5AA3013DE521F009E06A9 /* EgoDb.m */,
 				52B21A0A13DE511C00C984A5 /* EgoDb.h */,
 				52C98BF813D9F93C00B021FD /* EGODatabase.h */,
@@ -240,6 +248,7 @@
 				52390B0313D9F07600C3344C /* DescriptionView.xib in Resources */,
 				52C98C0B13D9F95700B021FD /* ClassMate2.sqlite in Resources */,
 				52FA5E4813DF49DE00CEEBD7 /* classList.xib in Resources */,
+				3F571FB613DF535600C93301 /* aboutView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +272,7 @@
 				52B21A8813DE513300C984A5 /* EventObj.m in Sources */,
 				52A5AA3113DE521F009E06A9 /* EgoDb.m in Sources */,
 				52FA5E4713DF49DE00CEEBD7 /* classList.m in Sources */,
+				3F571FB513DF535600C93301 /* aboutView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +290,8 @@
 				GCC_PREFIX_HEADER = ClassMate_Prefix.pch;
 				INFOPLIST_FILE = "ClassMate-Info.plist";
 				PRODUCT_NAME = ClassMate;
+				SDKROOT = iphoneos4.3;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -292,6 +304,8 @@
 				GCC_PREFIX_HEADER = ClassMate_Prefix.pch;
 				INFOPLIST_FILE = "ClassMate-Info.plist";
 				PRODUCT_NAME = ClassMate;
+				SDKROOT = iphoneos4.3;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -305,7 +319,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos4.3;
 			};
 			name = Debug;
 		};
@@ -319,7 +333,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos4.3;
 			};
 			name = Release;
 		};
