@@ -1,47 +1,28 @@
 //
-//  classView.m
+//  DescriptionView.m
 //  ClassMate
 //
-//  Created by CS Admin on 7/19/11.
+//  Created by CS Admin on 7/22/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "classView.h"
+#import "DescriptionView.h"
 
-#define HOMEWORKS 0
-#define PROJECTS 1
-#define TEST_SECTION 2
 
-@implementation classView
+@implementation DescriptionView
 
-@synthesize homework, tests, projects;
-@synthesize descriptionViewController;
 
 #pragma mark -
 #pragma mark View lifecycle
 
-
+/*
 - (void)viewDidLoad {
-	[super viewDidLoad];
-	self.title = @"Events";
-	
-	UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Add"
-												style:UIBarButtonSystemItemDone target:nil action:nil];
-	self.navigationItem.rightBarButtonItem = rightButton;
-	
-	[rightButton release];
-	
-
-	
-	//this is hard coding homework tests and quizzes
-	self.homework = [NSArray arrayWithObjects:@"Homework 1", @"Homework 2", @"Homework3", nil];
-	self.tests = [NSArray arrayWithObjects:@"Test 1",@"Test 2",@"Test 3",nil];
-	self.projects = [NSArray arrayWithObjects:@"Project 1",@"Project 2",@"Project 3", nil];
-
+    [super viewDidLoad];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+*/
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -77,46 +58,26 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 3;
+    return <#number of sections#>;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	
     // Return the number of rows in the section.
-    if (section == HOMEWORKS) {
-		return [self.homework count];
-	}else if (section == PROJECTS) {
-		return [self.projects count];
-	}else if (section == TEST_SECTION){
-		return [self.tests count]; 
-	}
-	return 0;
+    return <#number of rows in section#>;
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-	
-	//HAVE AN IF STATEMENT CHECKING THE SECTION AND FILLING IN WITH THE CORRECT ARRAY ACCORDINGLY
-    //[cell setText:@"stuff"];
-	
-	if (indexPath.section == HOMEWORKS) {
-		[cell setText:[homework objectAtIndex:indexPath.row]];
-	}
-	else if (indexPath.section == TEST_SECTION){
-		[cell setText:[tests objectAtIndex:indexPath.row]];
-	}
-	else {
-		[cell setText:[projects objectAtIndex:indexPath.row]];
-	}
-
+    
     // Configure the cell...
     
     return cell;
@@ -175,13 +136,6 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     */
-	if (self.descriptionViewController == nil) {
-		DescriptionView *view2 = [[DescriptionView alloc] initWithNibName:@"DescriptionView" bundle:[NSBundle mainBundle]];
-		self.descriptionViewController = view2;
-		[view2 release];
-	}
-	[self.navigationController pushViewController:self.descriptionViewController animated:YES];
-	
 }
 
 
@@ -202,36 +156,9 @@
 
 
 - (void)dealloc {
-	[tests release];
-	[projects release];
-	[homework release];
     [super dealloc];
 }
 
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section 
-{
-	
-	//check for the section number and then do one thing or another depending on the result
-	UIView *view = [[[UIView alloc] initWithFrame:CGRectMake(10, 10, 100, 30)] autorelease];
-	UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 100, 200, 100)];
-	view.backgroundColor = [UIColor lightGrayColor];
-	
-	//if section equals HOMEWORK
-	
-	
-	return view;
-	
-	
-
-}
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-	
-	
-		return tableView.tableHeaderView.frame.size.height;
-}
 
 @end
 
