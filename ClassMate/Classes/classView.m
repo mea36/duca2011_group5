@@ -296,20 +296,24 @@
 //THIS PART IS USED TO DELETE HOMEWORK WHEN IT IS DONE
 //CHECK HERE BECAUSE MELISSA WILL WANT TO SEE IT.
 - (void)tableView:(UITableView *)tv commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+	int event;
 	if(editingStyle == UITableViewCellEditingStyleDelete) {
 		
 		if (indexPath.section == HOMEWORKS) {
-			[self.homework removeObjectAtIndex:indexPath.row]; 
+			event = [[self.homework objectAtIndex:indexPath.row] event_id];
+			[self.homework removeObjectAtIndex:indexPath.row];
 		}
 		else if (indexPath.section == TEST_SECTION)
 		{
+			event = [[self.tests objectAtIndex:indexPath.row] event_id];
 			[self.tests removeObjectAtIndex:indexPath.row];
 		}
 		else {
+			event = [[self.projects objectAtIndex:indexPath.row] event_id];
 			[self.projects removeObjectAtIndex:indexPath.row];
 		}
 		//SimpleEditableListAppDelegate *controller = (SimpleEditableListAppDelegate *)[[UIApplication sharedApplication] delegate];
-		[[EgoDb database] deleteEventFromDatabaseWithEventID:indexPath.row];
+		[[EgoDb database] deleteEventFromDatabaseWithEventID:event];
 		
 		//[tv deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 		[tv reloadData];
