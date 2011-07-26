@@ -12,9 +12,11 @@
 
 @interface classList : UIViewController {
 	classView *classViewController;
-	NSArray *classes;
+	NSMutableArray *classes;
+	int class_id;
 	
 }
+
 @property(nonatomic, retain) classView *classViewController;
-@property(nonatomic, retain) NSArray *classes;
+@property(nonatomic, retain) NSMutableArray *classes;
 @end

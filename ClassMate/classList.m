@@ -7,10 +7,14 @@
 //
 
 #import "classList.h"
+#import "classView.h"
+#import "EgoDb.h"
+#import "ClassObj.h"
 
 #define CLASS 0
 
 @implementation classList
+
 @synthesize classViewController;
 @synthesize classes;
 
@@ -21,9 +25,25 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	self.title = @"Classes";
-	self.classes = [NSArray arrayWithObjects:@"English", @"Math", @"French", @"Calculus", @"Computer Science", nil];
 	
-	//classView *viewController = [[classView alloc] initWithNibName:@"classList" bundle:[NSBundle mainBundle]];
+	UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Add"
+																	style:UIBarButtonSystemItemDone target:nil action:nil];
+	self.navigationItem.rightBarButtonItem = rightButton;
+	
+	
+	[rightButton release];
+	
+	
+	NSArray *classes = [[EgoDb database] getListOfClasses];
+	self.classes = [[NSMutableArray alloc] initWithObjects:nil];
+	for(id class in classes) {
+		[self.classes addObject:[class class_name]];
+		classView *view = [[[classView alloc] initWithNibName:@"classList" bundle:nil] autorelease];
+		view.classID = class_id;
+		
+		[self.navigationController pushViewController:view animated:YES];	
+	}
+			//classView *viewController = [[classView alloc] initWithNibName:@"classList" bundle:[NSBundle mainBundle]];
 	
 	/*if(self.classViewController == nil)
 	{
@@ -96,7 +116,6 @@
     }
 	[cell setText:[classes objectAtIndex:indexPath.row]];
 	
-	
 	return cell;
     // Configure the cell...
 }
@@ -156,7 +175,11 @@
 		classView *viewController = [[classView alloc] initWithNibName:@"classList" bundle:[NSBundle mainBundle]];
 		self.classViewController = viewController;
 		[viewController release];
+		
+		
+		
 	}
+	
 	
 	[viewController release];
 	[self.navigationController pushViewController:self.classViewController animated:YES];
