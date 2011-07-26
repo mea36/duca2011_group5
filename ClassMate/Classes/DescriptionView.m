@@ -7,9 +7,13 @@
 //
 
 #import "DescriptionView.h"
-
+#import "EgoDb.h"
+#import "EventObj.h"
 
 @implementation DescriptionView
+@synthesize eventDueDate, eventDescription;
+@synthesize eventDesc;
+@synthesize eventTitle;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -25,8 +29,22 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	self.title = @"title call here";
 	
+	self.title = eventTitle;
+	
+	
+	
+	NSDateFormatter *format = [[NSDateFormatter alloc] init];
+	[format setDateFormat:@"MMM dd, yyyy"];
+	
+	
+	
+	NSString *dateString = [format stringFromDate:eventDueDate];
+	
+	NSDateFormatter *inFormat = [[NSDateFormatter alloc] init];
+	[inFormat setDateFormat:@"MMM dd, yyyy"];
+	
+	eventDesc.text = [NSString stringWithFormat:@"Due on: %@ \n\nDescription:\n%@", dateString, eventDescription];
     [super viewDidLoad];
 }
 
@@ -56,6 +74,7 @@
 - (void)dealloc {
     [super dealloc];
 }
+
 
 
 @end

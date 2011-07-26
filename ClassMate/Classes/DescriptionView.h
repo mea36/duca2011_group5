@@ -10,7 +10,15 @@
 
 
 @interface DescriptionView : UIViewController {
-
+	NSString *eventDescription;
+	NSDate *eventDueDate;
+	IBOutlet UITextView *eventDesc;
+	NSString *eventTitle;
 }
+
+@property (nonatomic,retain) NSString *eventDescription;
+@property (nonatomic,retain) NSDate	*eventDueDate;
+@property (nonatomic,retain) IBOutlet UITextView *eventDesc;
+@property (nonatomic,retain) NSString *eventTitle;
 
 @end

@@ -7,6 +7,9 @@
 //
 
 #import "classView.h"
+#import "EgoDb.h"
+#import "EventObj.h"
+#import "DescriptionView.h"
 
 #define HOMEWORKS 0
 #define PROJECTS 1
@@ -16,38 +19,61 @@
 
 @synthesize homework, tests, projects;
 @synthesize descriptionViewController;
-
+@synthesize classID;
+@synthesize className;
 #pragma mark -
 #pragma mark View lifecycle
 
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	self.title = @"Events";
+	NSLog(@"I am in classView");
+	self.title = className;
 	
 	UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Add"
 												style:UIBarButtonSystemItemDone target:nil action:nil];
 	self.navigationItem.rightBarButtonItem = rightButton;
 	
+	
+	
 	[rightButton release];
 	
-
 	
-	//this is hard coding homework tests and quizzes
-	self.homework = [NSArray arrayWithObjects:@"Homework 1", @"Homework 2", @"Homework3", nil];
-	self.tests = [NSArray arrayWithObjects:@"Test 1",@"Test 2",@"Test 3",nil];
-	self.projects = [NSArray arrayWithObjects:@"Project 1",@"Project 2",@"Project 3", nil];
 
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-/*
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+	
+
+	self.homework = [[EgoDb database] getHomeworkForClass:self.classID];
+	
+	
+	self.tests = [[EgoDb database] getTestsForClass:self.classID];
+	
+	self.projects = [[EgoDb database] getProjectsForClass:self.classID];
+	
+	
+
+	
+	
+	/*
+	for (id assignment in homeworks) 
+	{
+		[self.homework addObject:assignment ]; 
+	}
+	for (id assignment in tests1) 
+	{
+		[self.tests addObject:assignment]; 
+	}
+	for (id assignment in projects1) 
+	{
+		[self.projects addObject:assignment]; 
+	}
+	 */
 }
-*/
+
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -100,24 +126,28 @@
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
 	
 	//HAVE AN IF STATEMENT CHECKING THE SECTION AND FILLING IN WITH THE CORRECT ARRAY ACCORDINGLY
     //[cell setText:@"stuff"];
 	
 	if (indexPath.section == HOMEWORKS) {
-		[cell setText:[homework objectAtIndex:indexPath.row]];
+		//[cell setText:[[self.homework  objectAtIndex:indexPath.row] event_description]];
+		cell.textLabel.text = [[self.homework  objectAtIndex:indexPath.row] event_description];
+		
 	}
 	else if (indexPath.section == TEST_SECTION){
-		[cell setText:[tests objectAtIndex:indexPath.row]];
+		cell.textLabel.text = [[self.tests  objectAtIndex:indexPath.row] event_title];
+		cell.detailTextLabel.text = [[self.tests  objectAtIndex:indexPath.row] event_description];
 	}
 	else {
-		[cell setText:[projects objectAtIndex:indexPath.row]];
+		cell.textLabel.text = [[self.projects  objectAtIndex:indexPath.row] event_title];
+		cell.detailTextLabel.text = [[self.projects objectAtIndex:indexPath.row] event_description];
 	}
-
-    // Configure the cell...
+	
     
     return cell;
 }
@@ -175,13 +205,29 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     */
-	if (self.descriptionViewController == nil) {
-		DescriptionView *view2 = [[DescriptionView alloc] initWithNibName:@"DescriptionView" bundle:[NSBundle mainBundle]];
-		self.descriptionViewController = view2;
-		[view2 release];
-	}
-	[self.navigationController pushViewController:self.descriptionViewController animated:YES];
+	self.descriptionViewController = [[DescriptionView alloc] initWithNibName:@"DescriptionView" bundle:[NSBundle mainBundle]];
 	
+	if (indexPath.section == HOMEWORKS) {
+		descriptionViewController.eventDescription = [[self.homework objectAtIndex:indexPath.row] event_description];
+		descriptionViewController.eventDueDate = [[self.homework objectAtIndex:indexPath.row] event_due_date];
+		descriptionViewController.eventTitle = [[self.homework objectAtIndex:indexPath.row] event_description];
+	}
+	else if (indexPath.section == TEST_SECTION) {
+		descriptionViewController.eventDescription = [[self.tests objectAtIndex:indexPath.row] event_description];
+		descriptionViewController.eventDueDate = [[self.tests objectAtIndex:indexPath.row] event_due_date];
+		descriptionViewController.eventTitle = [[self.tests objectAtIndex:indexPath.row] event_title];
+	}
+	else {
+		descriptionViewController.eventDescription = [[self.projects objectAtIndex:indexPath.row] event_description];
+		descriptionViewController.eventDueDate = [[self.projects objectAtIndex:indexPath.row] event_due_date];
+		descriptionViewController.eventTitle = [[self.projects objectAtIndex:indexPath.row] event_title];
+	}
+
+	
+	
+	
+	[self.navigationController pushViewController:self.descriptionViewController animated:YES];
+	//[viewController release];
 }
 
 
@@ -209,28 +255,68 @@
 }
 
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section 
-{
-	
-	//check for the section number and then do one thing or another depending on the result
-	UIView *view = [[[UIView alloc] initWithFrame:CGRectMake(10, 10, 100, 30)] autorelease];
-	UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 100, 200, 100)];
-	view.backgroundColor = [UIColor lightGrayColor];
-	
-	//if section equals HOMEWORK
-	
-	
-	return view;
-	
-	
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	
+	if(section == HOMEWORKS)
+		if ([self.homework count] == 0) 
+		{
+			return NULL;
+		}
+		else 
+		{
+		return @"Homework";
+		}
+		
+	else if (section == TEST_SECTION)
+	{
+		if ([self.tests count] == 0) 
+		{
+			return NULL;
+		}
+		else 
+		{
+			return @"Tests";
+		}
+	}
+	else 
+	{
+		if ([self.projects count] == 0) 
+		{
+			return NULL;
+		}
+		else 
+		{
+			return @"Projects";
+		}
+	}
 }
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-	
-	
-		return tableView.tableHeaderView.frame.size.height;
+//THIS PART IS USED TO DELETE HOMEWORK WHEN IT IS DONE
+//CHECK HERE BECAUSE MELISSA WILL WANT TO SEE IT.
+- (void)tableView:(UITableView *)tv commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+	if(editingStyle == UITableViewCellEditingStyleDelete) {
+		
+		if (indexPath.section == HOMEWORKS) {
+			[self.homework removeObjectAtIndex:indexPath.row]; 
+		}
+		else if (indexPath.section == TEST_SECTION)
+		{
+			[self.tests removeObjectAtIndex:indexPath.row];
+		}
+		else {
+			[self.projects removeObjectAtIndex:indexPath.row];
+		}
+		//SimpleEditableListAppDelegate *controller = (SimpleEditableListAppDelegate *)[[UIApplication sharedApplication] delegate];
+		[[EgoDb database] deleteEventFromDatabaseWithEventID:indexPath.row];
+		
+		//[tv deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+		[tv reloadData];
+		
+
+		
+	}
 }
 
 @end
