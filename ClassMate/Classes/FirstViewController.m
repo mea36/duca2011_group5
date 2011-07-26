@@ -8,7 +8,7 @@
 
 #import "FirstViewController.h"
 #import "EgoDb.h"
-#import "ClassObj.h"
+#import "EventObj.h"
 
 
 @implementation FirstViewController
@@ -33,13 +33,6 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    NSArray *classes = [[EgoDb database] getListOfClasses]; 
-
-    for (id class in classes) {
-        NSLog(@"%@", [class toString]); 
-    }
-
-    
     [super viewDidLoad];
 }
 

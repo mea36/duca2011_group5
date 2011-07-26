@@ -19,7 +19,7 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    NSLog(@"%@", NSHomeDirectory());
+
     // Override point for customization after application launch.
 
 	// Set the tab bar controller as the window's root view controller and display.
