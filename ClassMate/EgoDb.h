@@ -15,10 +15,14 @@
 + (EgoDb*) database;
 - (id)init;
 - (void)createEditableCopyOfDatabaseIfNeeded;
+- (NSArray*)getListofCourses;
 - (NSArray*)getListOfClasses; 
 - (NSArray*)getHomeworkForClass:(int)classID;
 - (NSArray*)getTestsForClass:(int)classID;
 - (NSArray*)getProjectsForClass:(int)classID;
+- (void)addClasstoDatabaseWithClassName:(NSString*)className; 
+- (void)addEventToDatabaseWithType:(NSString*)type withTitle:(NSString*)title withDescription:(NSString*)description withDate:(NSDate*)date withAssociatedClass:(int)classID;
+- (void)deleteEventFromDatabaseWithEventID:(int)eventID;
+- (void)deleteClassFromList:(int)classID;
 
-//other methods for the db will go here
 @end
