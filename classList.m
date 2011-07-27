@@ -211,4 +211,27 @@
     [super dealloc];
 }
 
+- (void)tableView:(UITableView *)tv commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+	int event;
+	if(editingStyle == UITableViewCellEditingStyleDelete) {
+		
+	
+		event = [[self.classes objectAtIndex:indexPath.row] class_id];
+		[self.classes removeObjectAtIndex:indexPath.row];
+	
+		//SimpleEditableListAppDelegate *controller = (SimpleEditableListAppDelegate *)[[UIApplication sharedApplication] delegate];
+		[[EgoDb database] deleteClassFromList:event];
+		
+		//[tv deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+		[tv reloadData];
+		
+		
+		
+	}
+}
+- (UITableViewCellAccessoryType)tableView:(UITableView *)tv accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+	return UITableViewCellAccessoryDisclosureIndicator;
+}
+
 @end
