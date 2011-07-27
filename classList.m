@@ -67,7 +67,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 	self.classes = [[EgoDb database] getListOfClasses];
-    
+    [(UITableView* )self.view reloadData];
 }
 
 /*
