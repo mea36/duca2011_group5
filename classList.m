@@ -224,5 +224,9 @@
 		
 	}
 }
+- (UITableViewCellAccessoryType)tableView:(UITableView *)tv accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+	return UITableViewCellAccessoryDisclosureIndicator;
+}
 
 @end

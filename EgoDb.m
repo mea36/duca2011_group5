@@ -185,7 +185,7 @@ static EgoDb *db;
 
 - (void)deleteClassFromList:(int)classID
 {
-    NSString *query = [NSString stringWithFormat:@"DELETE FROM events WHERE event_id = %d", classID];
+    NSString *query = [NSString stringWithFormat:@"DELETE FROM classes WHERE class_id = %d", classID];
     
     [db executeUpdate:query]; 
 }
