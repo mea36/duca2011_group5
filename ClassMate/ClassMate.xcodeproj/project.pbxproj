@@ -16,10 +16,14 @@
 		2840D7CE1179279E00D7F93C /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2840D7CD1179279E00D7F93C /* FirstView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
-		52321F5413DCFAB30064C648 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52321F5313DCFAB30064C648 /* DescriptionView.xib */; };
-		52321F7813DCFBF10064C648 /* DescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52321F7713DCFBF10064C648 /* DescriptionView.m */; };
+		3F56039F13E048EB00C4AC0C /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F56039E13E048EB00C4AC0C /* 179-notepad.png */; };
+		3F5603A213E0493F00C4AC0C /* 157-wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5603A113E0493F00C4AC0C /* 157-wrench.png */; };
+		3F5603A413E050BB00C4AC0C /* 190-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5603A313E050BB00C4AC0C /* 190-bank.png */; };
+		3FB593B813DFB1A8009631D2 /* DescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB593B613DFB1A8009631D2 /* DescriptionView.m */; };
+		3FB593B913DFB1A8009631D2 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB593B713DFB1A8009631D2 /* DescriptionView.xib */; };
+		3FB593BE13DFB1E4009631D2 /* aboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB593BC13DFB1E4009631D2 /* aboutView.m */; };
+		3FB593BF13DFB1E4009631D2 /* aboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB593BD13DFB1E4009631D2 /* aboutView.xib */; };
 		52321FAC13DCFEE20064C648 /* EventObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 52321FAB13DCFEE20064C648 /* EventObj.m */; };
-		52B04E9313DDE1E70064D8F4 /* addEvent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B04E9213DDE1E70064D8F4 /* addEvent.xib */; };
 		52BED55113DE516700751AB7 /* addClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BED54F13DE516700751AB7 /* addClass.m */; };
 		52BED55213DE516700751AB7 /* addClass.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52BED55013DE516700751AB7 /* addClass.xib */; };
 		52C3E4B413DF4E9200A30845 /* classList.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3E4B113DF4E9200A30845 /* classList.m */; };
@@ -34,7 +38,6 @@
 		52CA2CCC13D9EF57006A9A05 /* ClassObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CA2CCB13D9EF57006A9A05 /* ClassObj.m */; };
 		52CA2CCE13D9EF70006A9A05 /* ClassMate2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 52CA2CCD13D9EF70006A9A05 /* ClassMate2.sqlite */; };
 		52CA2CD013D9EF89006A9A05 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CA2CCF13D9EF89006A9A05 /* libsqlite3.0.dylib */; };
-		52F5D97D13DF422C00193D46 /* addEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F5D97B13DF422C00193D46 /* addEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,12 +54,17 @@
 		28A0AB4B0D9B1048005BE974 /* ClassMate_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassMate_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		52321F5313DCFAB30064C648 /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = SOURCE_ROOT; };
-		52321F7613DCFBF10064C648 /* DescriptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DescriptionView.h; path = ../DescriptionView.h; sourceTree = SOURCE_ROOT; };
-		52321F7713DCFBF10064C648 /* DescriptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DescriptionView.m; path = ../DescriptionView.m; sourceTree = SOURCE_ROOT; };
+		3F56039E13E048EB00C4AC0C /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "179-notepad.png"; path = "../../../../Downloads/glyphish-icons/icons/179-notepad.png"; sourceTree = "<group>"; };
+		3F5603A113E0493F00C4AC0C /* 157-wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "157-wrench.png"; path = "../../../../Downloads/glyphish-icons/icons/157-wrench.png"; sourceTree = "<group>"; };
+		3F5603A313E050BB00C4AC0C /* 190-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "190-bank.png"; path = "../../../../Downloads/glyphish-icons/icons/190-bank.png"; sourceTree = "<group>"; };
+		3FB593B513DFB1A8009631D2 /* DescriptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionView.h; sourceTree = "<group>"; };
+		3FB593B613DFB1A8009631D2 /* DescriptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionView.m; sourceTree = "<group>"; };
+		3FB593B713DFB1A8009631D2 /* DescriptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
+		3FB593BB13DFB1E4009631D2 /* aboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aboutView.h; sourceTree = SOURCE_ROOT; };
+		3FB593BC13DFB1E4009631D2 /* aboutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aboutView.m; sourceTree = SOURCE_ROOT; };
+		3FB593BD13DFB1E4009631D2 /* aboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = aboutView.xib; sourceTree = SOURCE_ROOT; };
 		52321FAA13DCFED50064C648 /* EventObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventObj.h; sourceTree = SOURCE_ROOT; };
 		52321FAB13DCFEE20064C648 /* EventObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventObj.m; sourceTree = SOURCE_ROOT; };
-		52B04E9213DDE1E70064D8F4 /* addEvent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = addEvent.xib; path = ../addEvent.xib; sourceTree = "<group>"; };
 		52BED54E13DE516700751AB7 /* addClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addClass.h; sourceTree = "<group>"; };
 		52BED54F13DE516700751AB7 /* addClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addClass.m; sourceTree = "<group>"; };
 		52BED55013DE516700751AB7 /* addClass.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addClass.xib; sourceTree = "<group>"; };
@@ -80,8 +88,6 @@
 		52CA2CCB13D9EF57006A9A05 /* ClassObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassObj.m; sourceTree = "<group>"; };
 		52CA2CCD13D9EF70006A9A05 /* ClassMate2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ClassMate2.sqlite; sourceTree = "<group>"; };
 		52CA2CCF13D9EF89006A9A05 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		52F5D97A13DF422C00193D46 /* addEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addEvent.h; sourceTree = "<group>"; };
-		52F5D97B13DF422C00193D46 /* addEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addEvent.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ClassMate-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ClassMate-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,20 +109,20 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3FB593BB13DFB1E4009631D2 /* aboutView.h */,
+				3FB593BC13DFB1E4009631D2 /* aboutView.m */,
+				3FB593BD13DFB1E4009631D2 /* aboutView.xib */,
+				3FB593B513DFB1A8009631D2 /* DescriptionView.h */,
+				3FB593B613DFB1A8009631D2 /* DescriptionView.m */,
+				3FB593B713DFB1A8009631D2 /* DescriptionView.xib */,
 				52C3E4BF13DF4EE900A30845 /* classView.h */,
 				52C3E4C013DF4EE900A30845 /* classView.m */,
 				52C3E4C113DF4EE900A30845 /* classView.xib */,
 				52C3E4B013DF4E9200A30845 /* classList.h */,
 				52C3E4B113DF4E9200A30845 /* classList.m */,
 				52C3E4B213DF4E9200A30845 /* classList.xib */,
-				52F5D97A13DF422C00193D46 /* addEvent.h */,
-				52F5D97B13DF422C00193D46 /* addEvent.m */,
-				52B04E9213DDE1E70064D8F4 /* addEvent.xib */,
 				52321FAB13DCFEE20064C648 /* EventObj.m */,
 				52321FAA13DCFED50064C648 /* EventObj.h */,
-				52321F7613DCFBF10064C648 /* DescriptionView.h */,
-				52321F7713DCFBF10064C648 /* DescriptionView.m */,
-				52321F5313DCFAB30064C648 /* DescriptionView.xib */,
 				52CA2CCA13D9EF57006A9A05 /* ClassObj.h */,
 				52CA2CCB13D9EF57006A9A05 /* ClassObj.m */,
 				28216C950DB411BC00E5133A /* FirstViewController.h */,
@@ -163,6 +169,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3F5603A313E050BB00C4AC0C /* 190-bank.png */,
+				3F5603A113E0493F00C4AC0C /* 157-wrench.png */,
+				3F56039E13E048EB00C4AC0C /* 179-notepad.png */,
 				52CA2CCD13D9EF70006A9A05 /* ClassMate2.sqlite */,
 				2840D7CD1179279E00D7F93C /* FirstView.xib */,
 				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
@@ -253,11 +262,14 @@
 				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
 				2840D7CE1179279E00D7F93C /* FirstView.xib in Resources */,
 				52CA2CCE13D9EF70006A9A05 /* ClassMate2.sqlite in Resources */,
-				52321F5413DCFAB30064C648 /* DescriptionView.xib in Resources */,
-				52B04E9313DDE1E70064D8F4 /* addEvent.xib in Resources */,
 				52BED55213DE516700751AB7 /* addClass.xib in Resources */,
 				52C3E4B513DF4E9200A30845 /* classList.xib in Resources */,
 				52C3E4C313DF4EE900A30845 /* classView.xib in Resources */,
+				3FB593B913DFB1A8009631D2 /* DescriptionView.xib in Resources */,
+				3FB593BF13DFB1E4009631D2 /* aboutView.xib in Resources */,
+				3F56039F13E048EB00C4AC0C /* 179-notepad.png in Resources */,
+				3F5603A213E0493F00C4AC0C /* 157-wrench.png in Resources */,
+				3F5603A413E050BB00C4AC0C /* 190-bank.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,13 +288,13 @@
 				52CA2CC713D9EF39006A9A05 /* EGODatabaseResult.m in Sources */,
 				52CA2CC813D9EF39006A9A05 /* EGODatabaseRow.m in Sources */,
 				52CA2CCC13D9EF57006A9A05 /* ClassObj.m in Sources */,
-				52321F7813DCFBF10064C648 /* DescriptionView.m in Sources */,
 				52321FAC13DCFEE20064C648 /* EventObj.m in Sources */,
 				52BED55113DE516700751AB7 /* addClass.m in Sources */,
-				52F5D97D13DF422C00193D46 /* addEvent.m in Sources */,
 				52C3E4B413DF4E9200A30845 /* classList.m in Sources */,
 				52C3E4B613DF4E9200A30845 /* EgoDb.m in Sources */,
 				52C3E4C213DF4EE900A30845 /* classView.m in Sources */,
+				3FB593B813DFB1A8009631D2 /* DescriptionView.m in Sources */,
+				3FB593BE13DFB1E4009631D2 /* aboutView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

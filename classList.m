@@ -67,6 +67,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 	self.classes = [[EgoDb database] getListOfClasses];
+    
 }
 
 /*
@@ -125,8 +126,7 @@
 
 -(void)addClassList:(id)sender {
 	addClass *addClassView = [[[addClass alloc] init] autorelease];
-    [addClassView setModalTransitionStyle:UIModalTransitionStyleCrossDissolve]; 
-	[self presentModalViewController:addClassView animated:YES];
+    [self.navigationController pushViewController:addClassView animated:YES];
 }
 /*
 // Override to support conditional editing of the table view.

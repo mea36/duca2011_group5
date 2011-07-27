@@ -67,7 +67,9 @@ static EgoDb *db;
         [class setClass_id:[row intForColumn:@"class_id"]];
         [class setClass_name:[row stringForColumn:@"class_name"]]; 
         [retval addObject:class];
+        NSLog(@"adding class %@", [class toString]);
         [class release];
+        
 	}
     
     return retval; 

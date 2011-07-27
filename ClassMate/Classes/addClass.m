@@ -12,7 +12,7 @@
 
 @implementation addClass
 
-@synthesize courses, pickerView; 
+@synthesize courses, pickerView, currentClass; 
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -25,9 +25,9 @@
 }
 */
 
-- (IBAction)dismissView
+- (void)dismissView
 {
-	[self dismissModalViewControllerAnimated:YES];
+	[[self navigationController] popViewControllerAnimated:YES];
 }
 
 
@@ -35,7 +35,15 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(dismissView)]; 
+    self.navigationItem.leftBarButtonItem = cancelButton; 
 	self.courses = [[EgoDb database] getListofCourses];
+}
+
+- (IBAction)addCoursetoClassList:(id)sender
+{
+    [[EgoDb database] addClasstoDatabaseWithClassName:self.currentClass]; 
+    [self dismissView];
 }
 
 
@@ -61,7 +69,7 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-	
+    self.currentClass = [self.courses objectAtIndex:row];
 }
 
 
