@@ -10,8 +10,6 @@
 #import "EgoDb.h"
 #import "ClassObj.h"
 
-
-
 @interface addClass : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
 	
 	IBOutlet UIPickerView *pickerView;

@@ -10,6 +10,7 @@
 #import "EgoDb.h"
 #import "EventObj.h"
 #import "DescriptionView.h"
+#import "addEvent.h"
 
 #define HOMEWORKS 0
 #define PROJECTS 1
@@ -24,21 +25,20 @@
 #pragma mark -
 #pragma mark View lifecycle
 
+- (void)loadAddEvent:(id)sender {
+	addEvent *addEventView = [[[addEvent alloc] init] autorelease];
+    [self.navigationController pushViewController:addEventView animated:YES];
+}
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	NSLog(@"I am in classView");
 	self.title = className;
 	
 	UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Add"
-												style:UIBarButtonSystemItemDone target:nil action:nil];
+												style:UIBarButtonItemStylePlain target:self action:@selector(loadAddEvent:)];
 	self.navigationItem.rightBarButtonItem = rightButton;
 	
-	
-	
 	[rightButton release];
-	
-	
 
 }
 

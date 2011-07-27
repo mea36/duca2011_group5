@@ -18,6 +18,8 @@
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
 		3F5603A613E08CFA00C4AC0C /* 190-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5603A513E08CFA00C4AC0C /* 190-bank.png */; };
 		3F5603A813E08D0900C4AC0C /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5603A713E08D0900C4AC0C /* 179-notepad.png */; };
+		3F5603B013E08EC500C4AC0C /* addEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5603AE13E08EC500C4AC0C /* addEvent.m */; };
+		3F5603B113E08EC500C4AC0C /* addEvent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F5603AF13E08EC500C4AC0C /* addEvent.xib */; };
 		3FB593B813DFB1A8009631D2 /* DescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB593B613DFB1A8009631D2 /* DescriptionView.m */; };
 		3FB593B913DFB1A8009631D2 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB593B713DFB1A8009631D2 /* DescriptionView.xib */; };
 		3FB593BE13DFB1E4009631D2 /* aboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB593BC13DFB1E4009631D2 /* aboutView.m */; };
@@ -55,6 +57,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F5603A513E08CFA00C4AC0C /* 190-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "190-bank.png"; sourceTree = "<group>"; };
 		3F5603A713E08D0900C4AC0C /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad.png"; sourceTree = "<group>"; };
+		3F5603AD13E08EC500C4AC0C /* addEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = addEvent.h; path = ../addEvent.h; sourceTree = "<group>"; };
+		3F5603AE13E08EC500C4AC0C /* addEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = addEvent.m; path = ../addEvent.m; sourceTree = "<group>"; };
+		3F5603AF13E08EC500C4AC0C /* addEvent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = addEvent.xib; path = ../addEvent.xib; sourceTree = "<group>"; };
 		3FB593B513DFB1A8009631D2 /* DescriptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionView.h; sourceTree = "<group>"; };
 		3FB593B613DFB1A8009631D2 /* DescriptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionView.m; sourceTree = "<group>"; };
 		3FB593B713DFB1A8009631D2 /* DescriptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
@@ -107,6 +112,9 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3F5603AD13E08EC500C4AC0C /* addEvent.h */,
+				3F5603AE13E08EC500C4AC0C /* addEvent.m */,
+				3F5603AF13E08EC500C4AC0C /* addEvent.xib */,
 				3FB593BB13DFB1E4009631D2 /* aboutView.h */,
 				3FB593BC13DFB1E4009631D2 /* aboutView.m */,
 				3FB593BD13DFB1E4009631D2 /* aboutView.xib */,
@@ -266,6 +274,7 @@
 				3FB593BF13DFB1E4009631D2 /* aboutView.xib in Resources */,
 				3F5603A613E08CFA00C4AC0C /* 190-bank.png in Resources */,
 				3F5603A813E08D0900C4AC0C /* 179-notepad.png in Resources */,
+				3F5603B113E08EC500C4AC0C /* addEvent.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +300,7 @@
 				52C3E4C213DF4EE900A30845 /* classView.m in Sources */,
 				3FB593B813DFB1A8009631D2 /* DescriptionView.m in Sources */,
 				3FB593BE13DFB1E4009631D2 /* aboutView.m in Sources */,
+				3F5603B013E08EC500C4AC0C /* addEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
