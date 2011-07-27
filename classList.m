@@ -10,6 +10,7 @@
 #import "classView.h"
 #import "EgoDb.h"
 #import "ClassObj.h"
+#import "addClass.h"
 
 #define CLASS 0
 
@@ -27,7 +28,7 @@
 	self.title = @"Classes";
 	
 	UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Add"
-																	style:UIBarButtonSystemItemDone target:nil action:nil];
+																	style:UIBarButtonSystemItemDone target:self action:@selector(addClassList:)];
 	self.navigationItem.rightBarButtonItem = rightButton;
 	
 	
@@ -122,7 +123,11 @@
     // Configure the cell...
 }
 
-
+-(void)addClassList:(id)sender {
+	addClass *addClassView = [[[addClass alloc] init] autorelease];
+    [addClassView setModalTransitionStyle:UIModalTransitionStyleCrossDissolve]; 
+	[self presentModalViewController:addClassView animated:YES];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -161,12 +166,12 @@
     return YES;
 }
 */
-
+	
 
 #pragma mark -
 #pragma mark Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
 	
 	

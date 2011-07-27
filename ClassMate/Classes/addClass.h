@@ -15,11 +15,15 @@
 @interface addClass : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
 	
 	IBOutlet UIPickerView *pickerView;
+	IBOutlet UIBarButtonItem *cancel;
 	NSArray *courses;
 
 }
 
 @property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancel; 
 @property (nonatomic, retain) NSArray *courses;
+
+- (IBAction)dismissView; 
 
 @end
