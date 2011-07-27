@@ -7,8 +7,11 @@
 //
 
 #import "aboutView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation aboutView
+
+@synthesize ClassMateDescription;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +34,16 @@
 
 - (void)viewDidLoad
 {
+    UIImageView *ClassMateLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ClassMate.png"]];
+    
+    [self.view addSubview:ClassMateLogo]; 
+    
+    ClassMateLogo.frame = CGRectMake(16, 10, 280, 72);
+    
+    [ClassMateLogo release]; 
+    
+    ClassMateDescription.layer.cornerRadius = 10.0f;
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }

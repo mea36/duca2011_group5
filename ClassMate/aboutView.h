@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface aboutView : UIViewController
+@interface aboutView : UIViewController {
+    IBOutlet UITextView *ClassMateDescription;
+}
+
+@property (nonatomic, retain) IBOutlet UITextView *ClassMateDescription; 
 
 @end
