@@ -15,11 +15,7 @@
 	NSMutableArray *projects;
 	DescriptionView *descriptionViewController;
 	int classID;
-	
 	NSString *className;
-	
-	
-
 }
 
 @property (nonatomic, retain) DescriptionView *descriptionViewController;

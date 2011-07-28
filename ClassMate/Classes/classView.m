@@ -27,6 +27,7 @@
 
 - (void)loadAddEvent:(id)sender {
 	addEvent *addEventView = [[[addEvent alloc] init] autorelease];
+    addEventView.associatedClass = classID;
     [self.navigationController pushViewController:addEventView animated:YES];
 }
 
@@ -43,35 +44,14 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated 
+{
     [super viewWillAppear:animated];
-	
-
 	self.homework = [[EgoDb database] getHomeworkForClass:self.classID];
-	
-	
 	self.tests = [[EgoDb database] getTestsForClass:self.classID];
-	
 	self.projects = [[EgoDb database] getProjectsForClass:self.classID];
-	
-	
+    [(UITableView* )self.view reloadData];
 
-	
-	
-	/*
-	for (id assignment in homeworks) 
-	{
-		[self.homework addObject:assignment ]; 
-	}
-	for (id assignment in tests1) 
-	{
-		[self.tests addObject:assignment]; 
-	}
-	for (id assignment in projects1) 
-	{
-		[self.projects addObject:assignment]; 
-	}
-	 */
 }
 
 /*

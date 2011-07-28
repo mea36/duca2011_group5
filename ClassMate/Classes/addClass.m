@@ -34,6 +34,8 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad 
 {
+    self.title = @"Add Class";
+	self.currentClass = @"English";
     [super viewDidLoad];
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(dismissView)]; 
     self.navigationItem.leftBarButtonItem = cancelButton; 

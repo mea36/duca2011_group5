@@ -90,7 +90,7 @@ static EgoDb *db;
         [event setEvent_description:[row stringForColumn:@"description"]];
         
         NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
-        [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [df setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
         [event setEvent_due_date:[df dateFromString:[row stringForColumn:@"due_date"]]];
         [retval addObject:event];
         [event release];
@@ -115,7 +115,7 @@ static EgoDb *db;
         [event setEvent_description:[row stringForColumn:@"description"]];
         
         NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
-        [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [df setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
         [event setEvent_due_date:[df dateFromString:[row stringForColumn:@"due_date"]]];
         [retval addObject:event];
         [event release];
@@ -140,7 +140,7 @@ static EgoDb *db;
         [event setEvent_description:[row stringForColumn:@"description"]];
         
         NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
-        [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [df setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
         [event setEvent_due_date:[df dateFromString:[row stringForColumn:@"due_date"]]];
         [retval addObject:event];
         [event release];
@@ -156,22 +156,18 @@ static EgoDb *db;
     [db executeUpdate:query];
 }
 
-- (void)addEventToDatabaseWithType:(NSString *)type withTitle:(NSString *)title withDescription:(NSString *)description withDate:(NSDate *)date withAssociatedClass:(int)classID
+- (void)addEventToDatabaseWithType:(NSString *)type withTitle:(NSString *)title withDescription:(NSString *)description withDate:(NSString *)date withAssociatedClass:(int)classID
 {
-    NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
-    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSString *insert_date = [df stringFromDate:date];
-    
     NSString *query; 
     
-    if (title == nil) 
+    if (title == nil|| title == @"") 
     {
         title = @"NULL";
-        query = [NSString stringWithFormat:@"INSERT INTO events ('type', 'title', 'description', 'due_date', 'associated_class') VALUES ('%@', %@, '%@', '%@', '%d')", type, title, description, insert_date, classID];
+        query = [NSString stringWithFormat:@"INSERT INTO events ('type', 'title', 'description', 'due_date', 'associated_class') VALUES ('%@', %@, '%@', '%@ 10:10:10', '%d')", type, title, description, date, classID];
     }
     else
     {
-        query = [NSString stringWithFormat:@"INSERT INTO events ('type', 'title', 'description', 'due_date', 'associated_class') VALUES ('%@', '%@', '%@', '%@', '%d')", type, title, description, insert_date, classID];
+        query = [NSString stringWithFormat:@"INSERT INTO events ('type', 'title', 'description', 'due_date', 'associated_class') VALUES ('%@', '%@', '%@', '%@ 10:10:10', '%d')", type, title, description, date, classID];
     }
     
     [db executeUpdate:query];
@@ -189,6 +185,10 @@ static EgoDb *db;
     NSString *query = [NSString stringWithFormat:@"DELETE FROM classes WHERE class_id = %d", classID];
     
     [db executeUpdate:query]; 
+	
+	NSString *deleteEventsQuery = [NSString stringWithFormat:@"DELETE FROM events WHERE associated_class = %d", classID]; 
+	
+	[db executeUpdate:deleteEventsQuery]; 
 }
 
 
