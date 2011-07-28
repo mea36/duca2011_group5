@@ -21,7 +21,7 @@
 - (NSArray*)getTestsForClass:(int)classID;
 - (NSArray*)getProjectsForClass:(int)classID;
 - (void)addClasstoDatabaseWithClassName:(NSString*)className; 
-- (void)addEventToDatabaseWithType:(NSString*)type withTitle:(NSString*)title withDescription:(NSString*)description withDate:(NSDate*)date withAssociatedClass:(int)classID;
+- (void)addEventToDatabaseWithType:(NSString*)type withTitle:(NSString*)title withDescription:(NSString*)description withDate:(NSString*)date withAssociatedClass:(int)classID;
 - (void)deleteEventFromDatabaseWithEventID:(int)eventID;
 
 - (void)deleteClassFromList:(int)classID;

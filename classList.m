@@ -174,11 +174,7 @@
 - (void)tableView:(UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
 	
-	
-	
-
 	classView *viewController = [[classView alloc] initWithNibName:@"classList" bundle:[NSBundle mainBundle]];
-
 
 	viewController.classID = [[self.classes objectAtIndex:indexPath.row] class_id];
 	viewController.className = [[self.classes objectAtIndex:indexPath.row] class_name];
